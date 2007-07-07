@@ -6,13 +6,13 @@
 Summary:	A portable ANSI C implementation of the Sender Policy Framework library
 Name:		libspf
 Version:	1.0.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	BSD
 Group:		System/Libraries
 URL:		http://libspf.org/
 Source0:	http://libspf.org/files/src/%{name}-%{version}-%{plevel}.tar.bz2
-Patch0:		libspf-1.0.0-p2-no_release.diff
-Patch1:		libspf-1.0.0-p5-no_spfmilter.diff
+Patch0:		libspf-autofoo_fixes.diff
+Patch1:		libspf-1.0.0-p5-double-free_bug.diff
 BuildRequires:	chrpath
 BuildRequires:	autoconf2.5
 BuildRequires:	automake1.7
@@ -58,8 +58,8 @@ Sender Permitted From (SPF) command line query tool
 %prep
 
 %setup -q -n %{name}-%{version}-%{plevel}
-%patch0 -p0
-%patch1 -p1
+%patch0 -p1
+%patch1 -p0
 
 find . -type d -perm 0700 -exec chmod 755 {} \;
 find . -type f -perm 0555 -exec chmod 755 {} \;
@@ -72,8 +72,6 @@ for i in `find . -type d -name CVS` `find . -type f -name .cvs\*` `find . -type 
 done
     	
 %build
-rm -f configure
-libtoolize --copy --force; aclocal-1.7; automake-1.7 --foreign; autoconf
 
 %configure2_5x \
     --enable-pthreads \
@@ -118,4 +116,3 @@ chrpath -d %{buildroot}%{_bindir}/*
 %{_libdir}/*.so
 %{_libdir}/*.a
 %{_libdir}/*.la
-
