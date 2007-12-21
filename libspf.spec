@@ -17,6 +17,7 @@ BuildRequires:	chrpath
 BuildRequires:	autoconf2.5
 BuildRequires:	automake1.7
 BuildRequires:	libtool
+BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 libspf - Sender Permitted From library
