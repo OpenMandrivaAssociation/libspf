@@ -1,0 +1,11 @@
+--- src/libspf/main.c	2005-05-08 16:27:08.000000000 +0200
++++ src/libspf/main.c.oden	2007-07-07 18:27:56.000000000 +0200
+@@ -1683,7 +1683,7 @@
+     xfree(p->from);
+   }
+ 
+-  if (p->spf_rlevel > 0)
++  if (p->spf_rlevel > 0 && p->current_domain != p->original_domain)
+   {
+     xfree(p->current_domain);
+   }
