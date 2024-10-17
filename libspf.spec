@@ -9,7 +9,7 @@ Version:	1.0.0
 Release:	%mkrel 8
 License:	BSD
 Group:		System/Libraries
-URL:		http://libspf.org/
+URL:		https://libspf.org/
 Source0:	http://libspf.org/files/src/%{name}-%{version}-%{plevel}.tar.bz2
 Patch0:		libspf-autofoo_fixes.diff
 Patch1:		libspf-1.0.0-p5-double-free_bug.diff
