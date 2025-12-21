@@ -13,6 +13,8 @@ URL:		https://libspf.org/
 Source0:	http://libspf.org/files/src/%{name}-%{version}-%{plevel}.tar.bz2
 Patch0:		libspf-autofoo_fixes.diff
 Patch1:		libspf-1.0.0-p5-double-free_bug.diff
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	chrpath
 BuildRequires:	autoconf2.5
 BuildRequires:	automake
