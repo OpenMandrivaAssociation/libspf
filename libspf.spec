@@ -6,7 +6,7 @@
 Summary:	A portable ANSI C implementation of the Sender Policy Framework library
 Name:		libspf
 Version:	1.0.0
-Release:	%mkrel 8
+Release:	9
 License:	BSD
 Group:		System/Libraries
 URL:		https://libspf.org/
